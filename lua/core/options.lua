@@ -61,3 +61,14 @@ vim.o.cursorline = true
 
 -- Min number between cursor and edge
 vim.o.scrolloff = 10
+
+-- Diagnostic config
+vim.diagnostic.config({
+	update_in_insert = true,
+	severity_sort = true,
+	float = { border = "rounded", source = "if_many" },
+	underline = { severity = vim.diagnostic.severity.ERROR },
+	virtual_text = true,
+	virtual_lines = true,
+	jump = { float = true },
+})
