@@ -61,16 +61,23 @@ return {
 		"mawkler/hml.nvim",
 		opts = {
 			signs = {
-				H = "%#HmlBlue#H%*",
-				M = "%#HmlBlue#M%*",
-				L = "%#HmlBlue#L%*",
+				H = "%#HmlHighlight#H%*",
+				M = "%#HmlHighlight#M%*",
+				L = "%#HmlHighlight#L%*",
 			},
 		},
 		config = function(_, opts)
 			require("hml").setup(opts)
-			vim.api.nvim_set_hl(0, "HmlBlue", {
-				fg = "#61AFEF",
-				bold = true,
+			local function set_hml_highlight()
+				vim.api.nvim_set_hl(0, "HmlHighlight", {
+					fg = "#cecece",
+					bold = true,
+				})
+			end
+
+			set_hml_highlight()
+			vim.api.nvim_create_autocmd("ColorScheme", {
+				callback = set_hml_highlight,
 			})
 		end,
 	},
