@@ -79,4 +79,12 @@ return {
 	{
 		"RRethy/vim-illuminate",
 	},
+
+	-- Peeking on line jumps and selection preview
+	{
+		"nacro90/numb.nvim",
+		opts = {
+			peek_style = "auto",
+		},
+	},
 }
