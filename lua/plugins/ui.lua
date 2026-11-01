@@ -74,4 +74,9 @@ return {
 			})
 		end,
 	},
+
+	-- Automatically highlight word under the cursor
+	{
+		"RRethy/vim-illuminate",
+	},
 }
