@@ -2,6 +2,13 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- Color current line
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#5C6370" })
+vim.api.nvim_set_hl(0, "CursorLineNr", {
+	fg = "#61AFEF",
+	bold = true,
+})
+
 -- Disable error bells
 vim.opt.errorbells = false
 
