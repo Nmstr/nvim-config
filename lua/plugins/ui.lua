@@ -55,4 +55,23 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = { signs = false },
 	},
+
+	-- Add H/M/L indicators
+	{
+		"mawkler/hml.nvim",
+		opts = {
+			signs = {
+				H = "%#HmlBlue#H%*",
+				M = "%#HmlBlue#M%*",
+				L = "%#HmlBlue#L%*",
+			},
+		},
+		config = function(_, opts)
+			require("hml").setup(opts)
+			vim.api.nvim_set_hl(0, "HmlBlue", {
+				fg = "#61AFEF",
+				bold = true,
+			})
+		end,
+	},
 }
