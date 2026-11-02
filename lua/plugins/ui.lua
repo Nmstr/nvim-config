@@ -22,7 +22,7 @@ return {
 					},
 				},
 				renderer = {
-					highlight_git = true,
+					highlight_git = "all",
 					icons = {
 						show = {
 							git = false,
