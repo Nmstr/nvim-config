@@ -73,6 +73,9 @@ return {
 		local servers = {
 			pyright = {}, -- Python
 			clangd = {}, -- C/C++
+			qmlls = {
+				cmd = { "qmlls6" },
+			}, -- Qt QML
 		}
 		-- Ensure above servers and tools are installed
 		local ensure_installed = vim.tbl_keys(servers or {})

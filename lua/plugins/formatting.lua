@@ -31,6 +31,7 @@ return {
 			python = { "ruff_format" },
 			c = { "clang_format" },
 			cpp = { "clang_format" },
+			qml = { "qmlformat" },
 		},
 	},
 }
