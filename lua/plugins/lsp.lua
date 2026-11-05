@@ -10,8 +10,14 @@ return {
 		-- Allows extra capabilities provided by blink.cmp
 		"saghen/blink.cmp",
 		"saghen/blink.lib",
+		-- Java support
+		{ "nvim-java/nvim-java" },
 	},
 	config = function()
+		-- Java
+		require("java").setup()
+		vim.lsp.enable("jdtls")
+
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 			callback = function(event)
