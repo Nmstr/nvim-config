@@ -76,6 +76,21 @@ return {
 			qmlls = {
 				cmd = { "qmlls6" },
 			}, -- Qt QML
+			rust_analyzer = {
+				settings = {
+					["rust-analyzer"] = {
+						check = {
+							command = "clippy",
+						},
+						cargo = {
+							allFeatures = true,
+						},
+						procMacro = {
+							enable = true,
+						},
+					},
+				},
+			}, -- Rust
 		}
 		-- Ensure above servers and tools are installed
 		local ensure_installed = vim.tbl_keys(servers or {})
@@ -89,6 +104,9 @@ return {
 			-- C/C++
 			"clangd",
 			"clang-format",
+			-- Rust
+			"rust-analyzer",
+			"codelldb",
 		})
 
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })

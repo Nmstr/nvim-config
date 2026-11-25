@@ -32,6 +32,7 @@ return {
 			c = { "clang_format" },
 			cpp = { "clang_format" },
 			qml = { "qmlformat" },
+			rust = { "rustfmt" },
 		},
 	},
 }
