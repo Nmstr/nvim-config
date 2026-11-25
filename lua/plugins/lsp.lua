@@ -94,18 +94,22 @@ return {
 		}
 		-- Ensure above servers and tools are installed
 		local ensure_installed = vim.tbl_keys(servers or {})
+
+		local mason_name_map = {
+			rust_analyzer = "rust-analyzer",
+		}
+		for i, name in ipairs(ensure_installed) do
+			ensure_installed[i] = mason_name_map[name] or name
+		end
+
 		vim.list_extend(ensure_installed, {
 			-- Lua
-			"lua-language-server",
 			"stylua",
 			-- Python
-			"pyright",
 			"ruff",
 			-- C/C++
-			"clangd",
 			"clang-format",
 			-- Rust
-			"rust-analyzer",
 			"codelldb",
 		})
 
